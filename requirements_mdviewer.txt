@@ -1,0 +1,14 @@
+beautifulsoup4==4.13.4
+blinker==1.9.0
+click==8.2.0
+Flask==3.1.1
+itsdangerous==2.2.0
+Jinja2==3.1.6
+livereload==2.7.1
+markdown-it-py==3.0.0
+MarkupSafe==3.0.2
+mdurl==0.1.2
+soupsieve==2.7
+tornado==6.5
+typing_extensions==4.13.2
+Werkzeug==3.1.3

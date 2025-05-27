@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=80.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reqs2brew"
+version = "0.1.0"
+description = "A tool to generate Homebrew resource blocks from PyPI packages"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "Biao Jiang", email = "github@minsignal.com" }]
+dependencies = [
+    "requests",
+    "packaging"
+]
+
+keywords = ["homebrew", "cli", "formula", "resources", "brew", "python"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Utilities",
+  "Environment :: Console",
+  "Operating System :: OS Independent",
+  "Natural Language :: English",
+]
+
+[project.urls]
+Homepage = "https://github.com/biaojiang/homebrew-mdviewer"
+Documentation = "https://github.com/biaojiang/homebrew-mdviewer#readme"
+Source = "https://github.com/biaojiang/homebrew-mdviewer"
+Issues = "https://github.com/biaojiang/homebrew-mdviewer/issues"
+
+[project.scripts]
+reqs2brew = "reqs2brew.gen_resources:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
