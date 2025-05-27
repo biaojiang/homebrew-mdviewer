@@ -1,9 +1,10 @@
+import argparse
+import hashlib
 import os
 import sys
-import hashlib
-import requests
-from packaging.version import Version, InvalidVersion
 
+import requests
+from packaging.version import InvalidVersion, Version
 
 CACHE_DIR = "cache_tarballs"
 os.makedirs(CACHE_DIR, exist_ok=True)
@@ -46,14 +47,20 @@ def fetch_pypi_tarball_url(pkg_name):
     raise ValueError(f"No sdist tar.gz found for package")
 
 
-def main(requirements_file):
-    with open(requirements_file) as f:
+def main():
+    parser = argparse.ArgumentParser(
+        description="Generate Homebrew resource blocks from a requirements.txt file"
+    )
+    parser.add_argument("requirements_file", help="Path to requirements.txt")
+    args = parser.parse_args()
+
+    with open(args.requirements_file) as f:
         pkgs = [
             line.strip().split("==")[0]
             for line in f
             if line.strip() and not line.startswith("#")
         ]
-    
+
     output_lines = []
 
     for pkg in pkgs:
@@ -70,10 +77,7 @@ def main(requirements_file):
                 print(f"Using cached {filename}")
 
             checksum = sha256sum(cache_path)
-            # print(f'resource "{pkg}" do')
-            # print(f'  url "{url}"')
-            # print(f'  sha256 "{checksum}"')
-            # print("end\n")
+
             block = f'''resource "{pkg}" do
   url "{url}"
   sha256 "{checksum}"
@@ -88,10 +92,3 @@ end
 
     with open("resources.txt", "w") as f:
         f.writelines(output_lines)
-
-
-if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python generate_resources.py requirements.txt")
-        sys.exit(1)
-    main(sys.argv[1])
