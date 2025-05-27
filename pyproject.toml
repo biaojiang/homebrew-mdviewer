@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "reqs2brew"
-version = "0.1.0"
+version = "0.1.1"
 description = "A tool to generate Homebrew resource blocks from PyPI packages"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -32,7 +32,7 @@ Source = "https://github.com/biaojiang/homebrew-mdviewer"
 Issues = "https://github.com/biaojiang/homebrew-mdviewer/issues"
 
 [project.scripts]
-reqs2brew = "reqs2brew.gen_resources:main"
+reqs2brew = "reqs2brew.generate_resources:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

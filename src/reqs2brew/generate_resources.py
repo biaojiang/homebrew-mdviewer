@@ -86,7 +86,7 @@ end
         except Exception as e:
             print(f"Error processing {pkg}: {e}", file=sys.stderr)
 
-    with open("resources.rb", "w") as f:
+    with open("resources.txt", "w") as f:
         f.writelines(output_lines)
 
 

@@ -18,6 +18,10 @@ brew install biaojiang/mdviewer/mdviewer
 
 ## `reqs2brew` tool
 
+[![PyPI version](https://img.shields.io/pypi/v/reqs2brew)](https://pypi.org/project/reqs2brew/)
+[![License](https://img.shields.io/pypi/l/reqs2brew)](https://github.com/yourname/homebrew-mdviewer/blob/main/LICENSE)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/reqs2brew)](https://pypi.org/project/reqs2brew/)
+
 Generate Homebrew `resource` blocks from a `requirements.txt`.
 
 This tool helps Homebrew formula authors convert a list of Python dependencies into `resource` stanzas suitable for use with `virtualenv_install_with_resources`. It supports version resolution, SHA256 calculation, and optional filtering of pre-releases.
