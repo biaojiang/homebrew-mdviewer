@@ -19,8 +19,8 @@ brew install biaojiang/mdviewer/mdviewer
 ## `reqs2brew` tool
 
 [![PyPI version](https://img.shields.io/pypi/v/reqs2brew)](https://pypi.org/project/reqs2brew/)
-[![License](https://img.shields.io/pypi/l/reqs2brew)](https://github.com/yourname/homebrew-mdviewer/blob/main/LICENSE)
-[![PyPI Downloads](https://img.shields.io/pypi/dm/reqs2brew)](https://pypi.org/project/reqs2brew/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![PyPI Downloads](https://static.pepy.tech/badge/reqs2brew)](https://pepy.tech/projects/reqs2brew)
 
 Generate Homebrew `resource` blocks from a `requirements.txt`.
 
