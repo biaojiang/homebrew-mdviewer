@@ -1,4 +1,5 @@
 .DS_store
 __pycache__/
+*.egg-info/
 cache_tarballs/
 resources.txt
