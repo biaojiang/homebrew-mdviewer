@@ -26,11 +26,23 @@ def sha256sum(filename):
     return h.hexdigest()
 
 
-def fetch_pypi_tarball_url(pkg_name):
-    url = f"https://pypi.org/pypi/{pkg_name}/json"
+def fetch_pypi_tarball_url(pkg_name, version=None):
+    if version:
+        url = f"https://pypi.org/pypi/{pkg_name}/{version}/json"
+    else:
+        url = f"https://pypi.org/pypi/{pkg_name}/json"
     r = requests.get(url)
     r.raise_for_status()
     data = r.json()
+
+    if version:
+        for file_info in data["urls"]:
+            if file_info["packagetype"] == "sdist" and file_info["filename"].endswith(
+                ".tar.gz"
+            ):
+                return file_info["url"], file_info["filename"], version
+
+        raise ValueError(f"No sdist tar.gz found for {pkg_name}=={version}")
 
     # Try to get the latest source distribution URL (tar.gz)
     releases = data["releases"]
@@ -44,7 +56,22 @@ def fetch_pypi_tarball_url(pkg_name):
             ):
                 return file_info["url"], file_info["filename"], version
 
-    raise ValueError(f"No sdist tar.gz found for package")
+    raise ValueError(f"No sdist tar.gz found for {pkg_name}")
+
+
+def parse_requirement(line):
+    line = line.strip()
+    if not line or line.startswith("#"):
+        return None
+
+    if "#" in line:
+        line = line.split("#", 1)[0].strip()
+
+    if "==" in line:
+        name, version = line.split("==", 1)
+        return name.strip(), version.strip()
+
+    return line, None
 
 
 def main():
@@ -56,16 +83,16 @@ def main():
 
     with open(args.requirements_file) as f:
         pkgs = [
-            line.strip().split("==")[0]
+            requirement
             for line in f
-            if line.strip() and not line.startswith("#")
+            if (requirement := parse_requirement(line))
         ]
 
     output_lines = []
 
-    for pkg in pkgs:
+    for pkg, version in pkgs:
         try:
-            url, filename, _ = fetch_pypi_tarball_url(pkg)
+            url, filename, _ = fetch_pypi_tarball_url(pkg, version)
             cache_path = os.path.join(CACHE_DIR, filename)
             if not os.path.exists(cache_path):
                 print(f"Downloading {filename} ...")
@@ -92,3 +119,7 @@ end
 
     with open("resources.txt", "w") as f:
         f.writelines(output_lines)
+
+
+if __name__ == "__main__":
+    main()

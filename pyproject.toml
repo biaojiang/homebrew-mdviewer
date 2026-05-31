@@ -8,7 +8,7 @@ version = "0.1.2"
 description = "A tool to generate Homebrew resource blocks from PyPI packages"
 readme = "README.md"
 requires-python = ">=3.8"
-license = { text = "MIT" }
+license = "MIT"
 authors = [{ name = "Biao Jiang", email = "github@minsignal.com" }]
 dependencies = [
     "requests",
@@ -17,7 +17,6 @@ dependencies = [
 
 keywords = ["homebrew", "cli", "formula", "resources", "brew", "python"]
 classifiers = [
-  "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3",
   "Topic :: Utilities",
   "Environment :: Console",
@@ -40,5 +39,4 @@ include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["src"]
-
 
