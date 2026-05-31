@@ -3,8 +3,8 @@ class Mdviewer < Formula
 
   desc "Local browser UI for viewing Markdown files with search and file tree"
   homepage "https://github.com/biaojiang/mdviewer"
-  url "https://github.com/biaojiang/mdviewer/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "77f429a8834509165bbcd692b37cfbb8df6620e218f92ee9548f9f6cfc6bdc2a"
+  url "https://files.pythonhosted.org/packages/3a/ce/e28a3de27afedb03691337897efe96a370b1e0155d0a740be3673089bef1/mdviewer-0.3.1.tar.gz"
+  sha256 "98cf74ddc8b3b75f9de00ac012f5110fa7937bd928728201fd00b25c9b1d1e42"
   license "MIT"
 
   depends_on "python@3.14"
