@@ -3,8 +3,8 @@ class Mdviewer < Formula
 
   desc "Local browser UI for viewing Markdown files with search and file tree"
   homepage "https://github.com/biaojiang/mdviewer"
-  url "https://files.pythonhosted.org/packages/3a/ce/e28a3de27afedb03691337897efe96a370b1e0155d0a740be3673089bef1/mdviewer-0.3.1.tar.gz"
-  sha256 "98cf74ddc8b3b75f9de00ac012f5110fa7937bd928728201fd00b25c9b1d1e42"
+  url "https://files.pythonhosted.org/packages/cf/fa/6556f2fd13607040f7f61a316dbd4785ddb2ab3c7ea907e086747e6fdd19/mdviewer-0.4.3.tar.gz"
+  sha256 "631960d64ec235d182f940b676ad992b5cb34bbfb3921d743895b35d419d56da"
   license "MIT"
 
   depends_on "python@3.14"
@@ -12,8 +12,8 @@ class Mdviewer < Formula
   depends_on "fd"
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/c3/b0/1c6a16426d389813b48d95e26898aff79abbde42ad353958ad95cc8c9b21/beautifulsoup4-4.14.3.tar.gz"
-    sha256 "6292b1c5186d356bba669ef9f7f051757099565ad9ada5dd630bd9de5fa7fb86"
+    url "https://files.pythonhosted.org/packages/43/65/318323f98dbee45d42dff61d8f047181bc6f2268a9068cfad035a46be5af/beautifulsoup4-4.15.0.tar.gz"
+    sha256 "288e3ca7d54b06f2ac191970bc275c1939cb46d450b255bf6718b04aa37ab4f7"
   end
 
   resource "blinker" do
@@ -22,8 +22,8 @@ class Mdviewer < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "Flask" do
@@ -52,8 +52,13 @@ class Mdviewer < Formula
   end
 
   resource "MarkupSafe" do
-    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
-    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
+  end
+
+  resource "mdit-py-plugins" do
+    url "https://files.pythonhosted.org/packages/59/fc/f8d0863f8862f25602c0404d75568e89fb6b4109804645e5cdfb1be5cf56/mdit_py_plugins-0.6.1.tar.gz"
+    sha256 "a2bca0f039f39dbd35fb74ae1b5f998608c437463371f0ff7f49a19a17a114d0"
   end
 
   resource "mdurl" do
@@ -61,24 +66,35 @@ class Mdviewer < Formula
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
+  resource "regex" do
+    url "https://files.pythonhosted.org/packages/fc/f2/af1da9d3ceed77bfcdce40427d49ba0be94e4fe84245e3bfef68c10e75b6/regex-2026.9.29.tar.gz"
+    sha256 "8b5fcc4771732191b2b7d1dd68d8f0353f47f8d90b6150f6dce58bf1112442cb"
+  end
+
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/47/2c/0a5f6f8ee0d5589e48c7640213ed5175d52cf540a06725b628cc1a45d6ce/soupsieve-2.8.4.tar.gz"
-    sha256 "e121fd02e975c695e4e9e8774a5ee35d74714b59307868dcc5319ad2d9e3328e"
+    url "https://files.pythonhosted.org/packages/19/63/0b6bae54546aed98d72f12d09df57b19a287f01c84d22047fa2e23772ab9/soupsieve-3.0.4.tar.gz"
+    sha256 "924fab84ae21604c19e175e1f39815eb6fa83ba23836e09e9de180925e5bc4c0"
   end
 
   resource "tornado" do
-    url "https://files.pythonhosted.org/packages/50/57/6d7303a77ae439d9189108f76c0c4fd89ee5e2cc8387bffb55232565c4ed/tornado-6.5.6.tar.gz"
-    sha256 "9a365179fe8ff6b8766f602c0f67c185d778193e9bdd828b19f0b6ed7764177d"
+    url "https://files.pythonhosted.org/packages/d0/02/5f549b1ad5da6267ed1e1fac2eef69257b1979cc812497002499b7895ff9/tornado-6.6.tar.gz"
+    sha256 "34c4aa916d7f2b2d5cadee2c6850f5a4a7f3d688cbf58399ea9bd3057af4abd5"
   end
 
   resource "typing_extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   resource "Werkzeug" do
-    url "https://files.pythonhosted.org/packages/dd/b2/381be8cfdee792dd117872481b6e378f85c957dd7c5bca38897b08f765fd/werkzeug-3.1.8.tar.gz"
-    sha256 "9bad61a4268dac112f1c5cd4630a56ede601b6ed420300677a869083d70a4c44"
+    url "https://files.pythonhosted.org/packages/a4/34/4dd12fc8bb7d61c91467ec3efe415ffa7d5456f799954b40c5bbaeae470e/werkzeug-3.1.9.tar.gz"
+    sha256 "55ca7c70a75689be937aa27f8ff4b018f06ff4838fc73045560bf0f5a1291060"
+  end
+
+  # Required by wheel in Homebrew's inherited Python environment.
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   def install
@@ -86,7 +102,20 @@ class Mdviewer < Formula
   end
 
   test do
-    # basic CLI check
     assert_match "usage", shell_output("#{bin}/mdviewer --help")
+    assert_match version.to_s, shell_output("#{bin}/mdv --version")
+    system libexec/"bin/python", "-c", <<~PYTHON
+      from pathlib import Path
+      from unittest.mock import patch
+      from mdviewer.search.fd_search import search_filenames
+      from mdviewer.search.rg_search import search_content
+      from mdviewer.app import md
+      root = Path.cwd()
+      (root / "guide.md").write_text("A search needle")
+      with patch("shutil.which", return_value=None):
+          assert search_filenames("guide", str(root)) == ["guide.md"]
+          assert search_content("NEEDLE", str(root)) == ["guide.md"]
+      assert "<script>" not in md.render("<script>alert(1)</script>")
+    PYTHON
   end
 end
